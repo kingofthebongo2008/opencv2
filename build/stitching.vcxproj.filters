@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="samples">
+      <UniqueIdentifier>{278eb3ef-f374-468e-adc6-3896f5cc3310}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samples\cpp">
+      <UniqueIdentifier>{65d8d360-b87c-4571-a655-46b66ee7b4ab}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\samples\cpp\stitching.cpp">
+      <Filter>samples\cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
