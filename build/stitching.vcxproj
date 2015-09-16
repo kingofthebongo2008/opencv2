@@ -56,12 +56,15 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions);_SCL_SECURE_NO_WARNINGS;CV_AVX2</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../include;../modules/core/include;../modules/flann/include;../modules/features2d/include;../modules/imgproc/include;../modules/highgui/include;../modules/stitching/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;../modules/core/include;../modules/flann/include;../modules/features2d/include;../modules/imgproc/include;../modules/highgui/include;../modules/stitching/include;../modules/dynamicuda/include;../modules/calib3d/include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -80,12 +83,14 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions);_SCL_SECURE_NO_WARNINGS;CV_AVX2</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../include;../modules/core/include;../modules/flann/include;../modules/features2d/include;../modules/imgproc/include;../modules/highgui/include;../modules/stitching/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;../modules/core/include;../modules/flann/include;../modules/features2d/include;../modules/imgproc/include;../modules/highgui/include;../modules/stitching/include;../modules/dynamicuda/include;../modules/calib3d/include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
@@ -100,9 +105,142 @@
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\modules\calib3d\src\calibinit.cpp" />
+    <ClCompile Include="..\modules\calib3d\src\calibration.cpp" />
+    <ClCompile Include="..\modules\calib3d\src\checkchessboard.cpp" />
+    <ClCompile Include="..\modules\calib3d\src\circlesgrid.cpp" />
+    <ClCompile Include="..\modules\calib3d\src\epnp.cpp" />
+    <ClCompile Include="..\modules\calib3d\src\fisheye.cpp" />
+    <ClCompile Include="..\modules\calib3d\src\fundam.cpp" />
+    <ClCompile Include="..\modules\calib3d\src\modelest.cpp" />
+    <ClCompile Include="..\modules\calib3d\src\p3p.cpp" />
+    <ClCompile Include="..\modules\calib3d\src\polynom_solver.cpp" />
+    <ClCompile Include="..\modules\calib3d\src\posit.cpp" />
+    <ClCompile Include="..\modules\calib3d\src\quadsubpix.cpp" />
+    <ClCompile Include="..\modules\calib3d\src\solvepnp.cpp" />
+    <ClCompile Include="..\modules\calib3d\src\stereobm.cpp" />
+    <ClCompile Include="..\modules\calib3d\src\stereosgbm.cpp" />
+    <ClCompile Include="..\modules\calib3d\src\triangulate.cpp" />
+    <ClCompile Include="..\modules\core\src\algorithm.cpp" />
+    <ClCompile Include="..\modules\core\src\alloc.cpp" />
+    <ClCompile Include="..\modules\core\src\arithm.cpp" />
+    <ClCompile Include="..\modules\core\src\array.cpp" />
+    <ClCompile Include="..\modules\core\src\cmdparser.cpp" />
+    <ClCompile Include="..\modules\core\src\convert.cpp" />
+    <ClCompile Include="..\modules\core\src\copy.cpp" />
+    <ClCompile Include="..\modules\core\src\datastructs.cpp" />
+    <ClCompile Include="..\modules\core\src\drawing.cpp" />
+    <ClCompile Include="..\modules\core\src\dxt.cpp" />
+    <ClCompile Include="..\modules\core\src\gl_core_3_1.cpp" />
+    <ClCompile Include="..\modules\core\src\gpumat.cpp" />
+    <ClCompile Include="..\modules\core\src\lapack.cpp" />
+    <ClCompile Include="..\modules\core\src\mathfuncs.cpp" />
+    <ClCompile Include="..\modules\core\src\matmul.cpp" />
+    <ClCompile Include="..\modules\core\src\matop.cpp" />
+    <ClCompile Include="..\modules\core\src\matrix.cpp" />
+    <ClCompile Include="..\modules\core\src\opengl_interop.cpp" />
+    <ClCompile Include="..\modules\core\src\opengl_interop_deprecated.cpp" />
+    <ClCompile Include="..\modules\core\src\parallel.cpp" />
+    <ClCompile Include="..\modules\core\src\persistence.cpp" />
+    <ClCompile Include="..\modules\core\src\rand.cpp" />
+    <ClCompile Include="..\modules\core\src\stat.cpp" />
+    <ClCompile Include="..\modules\core\src\system.cpp" />
+    <ClCompile Include="..\modules\core\src\tables.cpp" />
+    <ClCompile Include="..\modules\features2d\src\bagofwords.cpp" />
+    <ClCompile Include="..\modules\features2d\src\blobdetector.cpp" />
+    <ClCompile Include="..\modules\features2d\src\brief.cpp" />
+    <ClCompile Include="..\modules\features2d\src\brisk.cpp" />
+    <ClCompile Include="..\modules\features2d\src\descriptors.cpp" />
+    <ClCompile Include="..\modules\features2d\src\detectors.cpp" />
+    <ClCompile Include="..\modules\features2d\src\draw.cpp" />
+    <ClCompile Include="..\modules\features2d\src\dynamic.cpp" />
+    <ClCompile Include="..\modules\features2d\src\evaluation.cpp" />
+    <ClCompile Include="..\modules\features2d\src\fast.cpp" />
+    <ClCompile Include="..\modules\features2d\src\fast_score.cpp" />
+    <ClCompile Include="..\modules\features2d\src\features2d_init.cpp" />
+    <ClCompile Include="..\modules\features2d\src\freak.cpp" />
+    <ClCompile Include="..\modules\features2d\src\keypoint.cpp" />
+    <ClCompile Include="..\modules\features2d\src\matchers.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)\matchers1.cpp</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)\matchers1.cpp</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\mser.cpp" />
+    <ClCompile Include="..\modules\features2d\src\orb.cpp" />
+    <ClCompile Include="..\modules\features2d\src\stardetector.cpp" />
+    <ClCompile Include="..\modules\flann\src\flann.cpp" />
+    <ClCompile Include="..\modules\flann\src\miniflann.cpp" />
+    <ClCompile Include="..\modules\highgui\src\bitstrm.cpp" />
+    <ClCompile Include="..\modules\highgui\src\grfmt_base.cpp" />
+    <ClCompile Include="..\modules\highgui\src\grfmt_bmp.cpp" />
+    <ClCompile Include="..\modules\highgui\src\grfmt_pxm.cpp" />
+    <ClCompile Include="..\modules\highgui\src\grfmt_sunras.cpp" />
+    <ClCompile Include="..\modules\highgui\src\grfmt_tiff.cpp" />
+    <ClCompile Include="..\modules\highgui\src\loadsave.cpp" />
+    <ClCompile Include="..\modules\highgui\src\utils.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\accum.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\approx.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\avx2\imgwarp_avx2.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\avx\imgwarp_avx.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\canny.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\clahe.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\color.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\contours.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\convhull.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\corner.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\cornersubpix.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\deriv.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\distransform.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\emd.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\featureselect.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\filter.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\floodfill.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\gabor.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\generalized_hough.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\geometry.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\grabcut.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\histogram.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\hough.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\imgwarp.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\linefit.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\matchcontours.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\moments.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\morph.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\phasecorr.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\pyramids.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\rotcalipers.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\samplers.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\segmentation.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\shapedescr.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\smooth.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\subdivision2d.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\sumpixels.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\tables.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)\tables1.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)\tables1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\templmatch.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\thresh.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\undistort.cpp" />
+    <ClCompile Include="..\modules\imgproc\src\utils.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)\utils1.cpp</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)\utils1.cpp</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\modules\stitching\src\autocalib.cpp" />
+    <ClCompile Include="..\modules\stitching\src\blenders.cpp" />
+    <ClCompile Include="..\modules\stitching\src\camera.cpp" />
+    <ClCompile Include="..\modules\stitching\src\exposure_compensate.cpp" />
+    <ClCompile Include="..\modules\stitching\src\matchers.cpp" />
+    <ClCompile Include="..\modules\stitching\src\motion_estimators.cpp" />
+    <ClCompile Include="..\modules\stitching\src\seam_finders.cpp" />
+    <ClCompile Include="..\modules\stitching\src\stitcher.cpp" />
+    <ClCompile Include="..\modules\stitching\src\util.cpp" />
+    <ClCompile Include="..\modules\stitching\src\warpers.cpp" />
     <ClCompile Include="..\samples\cpp\stitching.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\modules\core\src\precomp.hpp" />
+    <ClInclude Include="..\modules\flann\src\precomp.hpp" />
+    <ClInclude Include="..\modules\stitching\src\precomp.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

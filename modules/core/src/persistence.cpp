@@ -47,7 +47,7 @@
 #include <iterator>
 #include <wchar.h>
 
-#define USE_ZLIB 1
+//#define USE_ZLIB 0
 
 #ifdef __APPLE__
 #  include "TargetConditionals.h"
@@ -246,7 +246,9 @@ typedef struct CvFileStorage
     int space;
     char* filename;
     FILE* file;
+#if defined(USE_ZLIB)
     gzFile gzfile;
+#endif
     char* buffer;
     char* buffer_start;
     char* buffer_end;
@@ -338,7 +340,9 @@ static void icvCloseFile( CvFileStorage* fs )
         gzclose( fs->gzfile );
 #endif
     fs->file = 0;
+#if defined(USE_ZLIB)
     fs->gzfile = 0;
+#endif
     fs->strbuf = 0;
     fs->strbufpos = 0;
     fs->is_opened = false;
@@ -550,7 +554,11 @@ icvClose( CvFileStorage* fs, std::string* out )
 
     if( fs->is_opened )
     {
+#if defined(USE_ZLIB)
         if( fs->write_mode && (fs->file || fs->gzfile || fs->outbuf) )
+#else
+        if( fs->write_mode && (fs->file || fs->outbuf) )
+#endif
         {
             if( fs->write_stack )
             {
@@ -2941,7 +2949,11 @@ cvOpenFileStorage( const char* filename, CvMemStorage* dststorage, int flags, co
 _exit_:
     if( fs )
     {
+#if defined(USE_ZLIB)
         if( cvGetErrStatus() < 0 || (!fs->file && !fs->gzfile && !fs->outbuf && !fs->strbuf) )
+#else
+        if (cvGetErrStatus() < 0 || (!fs->file && !fs->outbuf && !fs->strbuf))
+#endif
         {
             cvReleaseFileStorage( &fs );
         }

@@ -7,10 +7,414 @@
     <Filter Include="samples\cpp">
       <UniqueIdentifier>{65d8d360-b87c-4571-a655-46b66ee7b4ab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="modules">
+      <UniqueIdentifier>{7afb490f-8045-457c-b093-e608602bc144}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\core">
+      <UniqueIdentifier>{c11cd27e-1140-4686-b0da-3f2adcfc2389}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\highgui">
+      <UniqueIdentifier>{91ec0e8c-1676-44a7-bfd0-7349ffadb164}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\stitching">
+      <UniqueIdentifier>{7a7fe840-c368-4e8f-ab22-0d0b7a22d1f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\flann">
+      <UniqueIdentifier>{1c9c6bcd-52e7-47e3-bbbb-e6fa2a962bb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\imgproc">
+      <UniqueIdentifier>{c7ea54dd-23a6-43f5-88f0-334bfe6805f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\calib3d">
+      <UniqueIdentifier>{6b5277a5-2118-43ce-b82b-ccb8abf951bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\features2d">
+      <UniqueIdentifier>{f17cc67d-fe06-4494-80ac-4f4c7250144e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\imgproc\avx">
+      <UniqueIdentifier>{a0eaeb45-0fec-4189-92be-5a2e1c9c567a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\imgproc\avx2">
+      <UniqueIdentifier>{4059bcc2-fc68-4430-a02c-f9fc12079e38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\samples\cpp\stitching.cpp">
       <Filter>samples\cpp</Filter>
     </ClCompile>
+    <ClCompile Include="..\modules\core\src\algorithm.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\alloc.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\arithm.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\array.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\cmdparser.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\convert.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\copy.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\datastructs.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\system.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\gpumat.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\mathfuncs.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\matmul.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\matop.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\matrix.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\persistence.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\parallel.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\lapack.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\rand.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\stat.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\gl_core_3_1.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\opengl_interop.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\tables.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\opengl_interop_deprecated.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\highgui\src\loadsave.cpp">
+      <Filter>modules\highgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\highgui\src\grfmt_base.cpp">
+      <Filter>modules\highgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\highgui\src\grfmt_bmp.cpp">
+      <Filter>modules\highgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\highgui\src\grfmt_pxm.cpp">
+      <Filter>modules\highgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\highgui\src\grfmt_sunras.cpp">
+      <Filter>modules\highgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\highgui\src\grfmt_tiff.cpp">
+      <Filter>modules\highgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\highgui\src\bitstrm.cpp">
+      <Filter>modules\highgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\highgui\src\utils.cpp">
+      <Filter>modules\highgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\stitching\src\autocalib.cpp">
+      <Filter>modules\stitching</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\stitching\src\camera.cpp">
+      <Filter>modules\stitching</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\stitching\src\exposure_compensate.cpp">
+      <Filter>modules\stitching</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\stitching\src\matchers.cpp">
+      <Filter>modules\stitching</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\stitching\src\motion_estimators.cpp">
+      <Filter>modules\stitching</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\stitching\src\seam_finders.cpp">
+      <Filter>modules\stitching</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\stitching\src\stitcher.cpp">
+      <Filter>modules\stitching</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\stitching\src\util.cpp">
+      <Filter>modules\stitching</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\stitching\src\warpers.cpp">
+      <Filter>modules\stitching</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\flann\src\flann.cpp">
+      <Filter>modules\flann</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\flann\src\miniflann.cpp">
+      <Filter>modules\flann</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\accum.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\approx.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\canny.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\clahe.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\color.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\contours.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\convhull.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\corner.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\cornersubpix.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\deriv.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\distransform.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\emd.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\featureselect.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\filter.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\floodfill.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\gabor.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\generalized_hough.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\geometry.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\grabcut.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\histogram.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\hough.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\imgwarp.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\linefit.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\matchcontours.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\moments.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\morph.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\phasecorr.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\pyramids.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\rotcalipers.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\samplers.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\segmentation.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\shapedescr.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\smooth.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\subdivision2d.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\sumpixels.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\tables.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\templmatch.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\thresh.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\undistort.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\utils.cpp">
+      <Filter>modules\imgproc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\dxt.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\calib3d\src\calibinit.cpp">
+      <Filter>modules\calib3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\calib3d\src\calibration.cpp">
+      <Filter>modules\calib3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\calib3d\src\checkchessboard.cpp">
+      <Filter>modules\calib3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\calib3d\src\circlesgrid.cpp">
+      <Filter>modules\calib3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\calib3d\src\epnp.cpp">
+      <Filter>modules\calib3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\calib3d\src\fisheye.cpp">
+      <Filter>modules\calib3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\calib3d\src\fundam.cpp">
+      <Filter>modules\calib3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\calib3d\src\modelest.cpp">
+      <Filter>modules\calib3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\calib3d\src\p3p.cpp">
+      <Filter>modules\calib3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\calib3d\src\polynom_solver.cpp">
+      <Filter>modules\calib3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\calib3d\src\posit.cpp">
+      <Filter>modules\calib3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\calib3d\src\quadsubpix.cpp">
+      <Filter>modules\calib3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\calib3d\src\solvepnp.cpp">
+      <Filter>modules\calib3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\calib3d\src\stereobm.cpp">
+      <Filter>modules\calib3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\calib3d\src\stereosgbm.cpp">
+      <Filter>modules\calib3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\calib3d\src\triangulate.cpp">
+      <Filter>modules\calib3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\bagofwords.cpp">
+      <Filter>modules\features2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\blobdetector.cpp">
+      <Filter>modules\features2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\brief.cpp">
+      <Filter>modules\features2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\brisk.cpp">
+      <Filter>modules\features2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\descriptors.cpp">
+      <Filter>modules\features2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\detectors.cpp">
+      <Filter>modules\features2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\draw.cpp">
+      <Filter>modules\features2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\dynamic.cpp">
+      <Filter>modules\features2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\evaluation.cpp">
+      <Filter>modules\features2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\fast.cpp">
+      <Filter>modules\features2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\fast_score.cpp">
+      <Filter>modules\features2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\features2d_init.cpp">
+      <Filter>modules\features2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\freak.cpp">
+      <Filter>modules\features2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\keypoint.cpp">
+      <Filter>modules\features2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\matchers.cpp">
+      <Filter>modules\features2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\mser.cpp">
+      <Filter>modules\features2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\orb.cpp">
+      <Filter>modules\features2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\features2d\src\stardetector.cpp">
+      <Filter>modules\features2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\stitching\src\blenders.cpp">
+      <Filter>modules\stitching</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\avx2\imgwarp_avx2.cpp">
+      <Filter>modules\imgproc\avx2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\core\src\drawing.cpp">
+      <Filter>modules\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\imgproc\src\avx\imgwarp_avx.cpp">
+      <Filter>modules\imgproc\avx</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\modules\core\src\precomp.hpp">
+      <Filter>modules\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\modules\stitching\src\precomp.hpp">
+      <Filter>modules\stitching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\modules\flann\src\precomp.hpp">
+      <Filter>modules\flann</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
