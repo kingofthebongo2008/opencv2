@@ -58,7 +58,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions);_SCL_SECURE_NO_WARNINGS;CV_AVX2</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../include;../modules/core/include;../modules/flann/include;../modules/features2d/include;../modules/imgproc/include;../modules/highgui/include;../modules/stitching/include;../modules/dynamicuda/include;../modules/calib3d/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;../modules/core/include;../modules/flann/include;../modules/features2d/include;../modules/imgproc/include;../modules/highgui/include;../modules/stitching/include;../modules/dynamicuda/include;../modules/calib3d/include;../3rdparty/libjpeg</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
@@ -85,7 +85,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions);_SCL_SECURE_NO_WARNINGS;CV_AVX2</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../include;../modules/core/include;../modules/flann/include;../modules/features2d/include;../modules/imgproc/include;../modules/highgui/include;../modules/stitching/include;../modules/dynamicuda/include;../modules/calib3d/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;../modules/core/include;../modules/flann/include;../modules/features2d/include;../modules/imgproc/include;../modules/highgui/include;../modules/stitching/include;../modules/dynamicuda/include;../modules/calib3d/include;../3rdparty/libjpeg</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
     </ClCompile>
@@ -105,6 +105,53 @@
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\3rdparty\libjpeg\jcapimin.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jcapistd.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jccoefct.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jccolor.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jcdctmgr.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jchuff.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jcinit.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jcmainct.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jcmarker.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jcmaster.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jcomapi.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jcparam.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jcphuff.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jcprepct.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jcsample.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jctrans.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jdapimin.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jdapistd.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jdatadst.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jdatasrc.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jdcoefct.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jdcolor.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jddctmgr.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jdhuff.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jdinput.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jdmainct.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jdmarker.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jdmaster.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jdmerge.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jdphuff.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jdpostct.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jdsample.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jdtrans.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jerror.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jfdctflt.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jfdctfst.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jfdctint.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jidctflt.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jidctfst.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jidctint.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jidctred.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jmemansi.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jmemmgr.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jquant1.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jquant2.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\jutils.c" />
+    <ClCompile Include="..\3rdparty\libjpeg\transupp.c" />
     <ClCompile Include="..\modules\calib3d\src\calibinit.cpp" />
     <ClCompile Include="..\modules\calib3d\src\calibration.cpp" />
     <ClCompile Include="..\modules\calib3d\src\checkchessboard.cpp" />
@@ -172,6 +219,7 @@
     <ClCompile Include="..\modules\highgui\src\bitstrm.cpp" />
     <ClCompile Include="..\modules\highgui\src\grfmt_base.cpp" />
     <ClCompile Include="..\modules\highgui\src\grfmt_bmp.cpp" />
+    <ClCompile Include="..\modules\highgui\src\grfmt_jpeg.cpp" />
     <ClCompile Include="..\modules\highgui\src\grfmt_pxm.cpp" />
     <ClCompile Include="..\modules\highgui\src\grfmt_sunras.cpp" />
     <ClCompile Include="..\modules\highgui\src\grfmt_tiff.cpp" />
@@ -238,6 +286,20 @@
     <ClCompile Include="..\samples\cpp\stitching.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\cvconfig.h" />
+    <ClInclude Include="..\include\opencv2\opencv.hpp" />
+    <ClInclude Include="..\include\opencv2\opencv_modules.hpp" />
+    <ClInclude Include="..\include\opencv\cv.h" />
+    <ClInclude Include="..\include\opencv\cv.hpp" />
+    <ClInclude Include="..\include\opencv\cvaux.h" />
+    <ClInclude Include="..\include\opencv\cvaux.hpp" />
+    <ClInclude Include="..\include\opencv\cvwimage.h" />
+    <ClInclude Include="..\include\opencv\cxcore.h" />
+    <ClInclude Include="..\include\opencv\cxcore.hpp" />
+    <ClInclude Include="..\include\opencv\cxeigen.hpp" />
+    <ClInclude Include="..\include\opencv\cxmisc.h" />
+    <ClInclude Include="..\include\opencv\highgui.h" />
+    <ClInclude Include="..\include\opencv\ml.h" />
     <ClInclude Include="..\modules\core\src\precomp.hpp" />
     <ClInclude Include="..\modules\flann\src\precomp.hpp" />
     <ClInclude Include="..\modules\stitching\src\precomp.hpp" />
