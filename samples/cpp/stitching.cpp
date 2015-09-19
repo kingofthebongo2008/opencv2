@@ -42,6 +42,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <chrono>
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/stitching/stitcher.hpp"
 
@@ -57,6 +58,7 @@ int parseCmdArgs(int argc, char** argv);
 
 int main(int argc, char* argv[])
 {
+    std::chrono::steady_clock::time_point start_stitch = std::chrono::steady_clock::now();
     int retval = parseCmdArgs(argc, argv);
     if (retval) return -1;
 
@@ -71,6 +73,10 @@ int main(int argc, char* argv[])
     }
 
     imwrite(result_name, pano);
+
+    std::chrono::steady_clock::time_point end_end_stitch = std::chrono::steady_clock::now();
+
+    std::cout << "Stitching took: " << std::chrono::duration_cast<std::chrono::milliseconds>(end_end_stitch - start_stitch).count() << " ms" << std::endl;
     return 0;
 }
 
