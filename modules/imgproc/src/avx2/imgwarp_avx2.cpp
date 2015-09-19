@@ -47,6 +47,8 @@
 const int INTER_RESIZE_COEF_BITS=11;
 const int INTER_RESIZE_COEF_SCALE=1 << INTER_RESIZE_COEF_BITS;
 
+__declspec(align(32)) static const int index[8] = { 0, 4, 1, 5, 2, 6, 3, 7 };
+
 int VResizeLinearVec_32s8u_avx2(const uchar** _src, uchar* dst, const uchar* _beta, int width )
 {
     const int** src = (const int**)_src;
@@ -55,7 +57,6 @@ int VResizeLinearVec_32s8u_avx2(const uchar** _src, uchar* dst, const uchar* _be
     int x = 0;
     __m256i b0 = _mm256_set1_epi16(beta[0]), b1 = _mm256_set1_epi16(beta[1]);
     __m256i delta = _mm256_set1_epi16(2);
-    __declspec(align(16)) static const int index[8] = { 0, 4, 1, 5, 2, 6, 3, 7 };
     __m256i shuffle = _mm256_load_si256((const __m256i*)index);
 
     if( (((size_t)S0|(size_t)S1)&31) == 0 )
