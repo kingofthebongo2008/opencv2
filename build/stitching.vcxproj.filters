@@ -52,6 +52,30 @@
     <Filter Include="3rdparty\libjpeg">
       <UniqueIdentifier>{006ebab4-fbc9-4c5c-b5a2-e08314694ffe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="modules\gpu">
+      <UniqueIdentifier>{b92ce236-207f-49a3-b6eb-a3fd30658fc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\gpu\cuda">
+      <UniqueIdentifier>{f1cdc890-b7c2-4bf4-905c-ad6552dbb925}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\dynamicuda">
+      <UniqueIdentifier>{0bb121a5-dc09-42c6-b8a7-b5bdb5949ae0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\dynamicuda\cuda">
+      <UniqueIdentifier>{9346a7b4-2d6f-4672-804a-7998ab7d3023}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\gpu\nvidia">
+      <UniqueIdentifier>{379eaa74-3dd2-4250-aebb-42ffb9a23197}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\gpu\nvidia\core">
+      <UniqueIdentifier>{e1c56549-b613-49d1-b766-c8aff2128bc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\gpu\nvidia\NPP_Staging">
+      <UniqueIdentifier>{a26b5d0a-0e62-46f0-9c27-a6351d8f8481}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\objdetect">
+      <UniqueIdentifier>{25b8fc2a-a739-4289-a50d-fbc1133aa8e1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\samples\cpp\stitching.cpp">
@@ -513,6 +537,54 @@
     <ClCompile Include="..\3rdparty\libjpeg\transupp.c">
       <Filter>3rdparty\libjpeg</Filter>
     </ClCompile>
+    <ClCompile Include="..\modules\gpu\src\brute_force_matcher.cpp">
+      <Filter>modules\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\gpu\src\cu_safe_call.cpp">
+      <Filter>modules\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\gpu\src\cudastream.cpp">
+      <Filter>modules\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\gpu\src\matrix_operations.cpp">
+      <Filter>modules\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\gpu\src\pyramids.cpp">
+      <Filter>modules\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\gpu\src\element_operations.cpp">
+      <Filter>modules\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\gpu\src\arithm.cpp">
+      <Filter>modules\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\gpu\src\error.cpp">
+      <Filter>modules\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\gpu\src\cascadeclassifier2.cpp">
+      <Filter>modules\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\objdetect\src\cascadedetect.cpp">
+      <Filter>modules\objdetect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\objdetect\src\haar.cpp">
+      <Filter>modules\objdetect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\gpu\src\imgproc2.cpp">
+      <Filter>modules\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\gpu\src\graphcuts.cpp">
+      <Filter>modules\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\gpu\src\matrix_reductions.cpp">
+      <Filter>modules\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\gpu\src\remap.cpp">
+      <Filter>modules\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\modules\gpu\src\precomp.cpp">
+      <Filter>modules\gpu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\modules\core\src\precomp.hpp">
@@ -566,5 +638,55 @@
     <ClInclude Include="..\include\opencv\ml.h">
       <Filter>include\opencv</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\modules\gpu\src\cuda\bf_knnmatch.cu">
+      <Filter>modules\gpu\cuda</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\modules\gpu\src\cuda\bf_match.cu">
+      <Filter>modules\gpu\cuda</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\modules\dynamicuda\src\cuda\matrix_operations.cu">
+      <Filter>modules\dynamicuda\cuda</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\modules\gpu\src\cuda\bf_radius_match.cu">
+      <Filter>modules\gpu\cuda</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\modules\gpu\src\nvidia\core\NCVPyramid.cu">
+      <Filter>modules\gpu\nvidia\core</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\modules\gpu\src\cuda\pyr_down.cu">
+      <Filter>modules\gpu\cuda</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\modules\gpu\src\cuda\pyr_up.cu">
+      <Filter>modules\gpu\cuda</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\modules\gpu\src\cuda\element_operations.cu">
+      <Filter>modules\gpu\cuda</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\modules\gpu\src\cuda\mathfunc.cu">
+      <Filter>modules\gpu\cuda</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\modules\gpu\src\nvidia\NPP_staging\NPP_staging.cu">
+      <Filter>modules\gpu\nvidia\NPP_Staging</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\modules\gpu\src\nvidia\core\NCV.cu">
+      <Filter>modules\gpu\nvidia\core</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\modules\gpu\src\cuda\imgproc.cu">
+      <Filter>modules\gpu\cuda</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\modules\gpu\src\cuda\ccomponetns.cu">
+      <Filter>modules\gpu\cuda</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\modules\gpu\src\cuda\matrix_reductions.cu">
+      <Filter>modules\gpu\cuda</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\modules\gpu\src\cuda\remap.cu">
+      <Filter>modules\gpu\cuda</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\modules\gpu\src\cuda\lut.cu">
+      <Filter>modules\gpu\cuda</Filter>
+    </CudaCompile>
   </ItemGroup>
 </Project>

@@ -2,10 +2,10 @@
 
 #define HAVE_JPEG
 
-//#define HAVE_CUDA
-//#define USE_CUDA
+#define HAVE_CUDA
+#define USE_CUDA
 
-//#define HAVE_OPENCV_GPU
+#define HAVE_OPENCV_GPU
 
 #define HAVE_WINRT
 

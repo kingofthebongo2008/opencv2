@@ -58,7 +58,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions);_SCL_SECURE_NO_WARNINGS;CV_AVX2</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../include;../modules/core/include;../modules/flann/include;../modules/features2d/include;../modules/imgproc/include;../modules/highgui/include;../modules/stitching/include;../modules/dynamicuda/include;../modules/calib3d/include;../3rdparty/libjpeg</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;../modules/core/include;../modules/flann/include;../modules/features2d/include;../modules/imgproc/include;../modules/highgui/include;../modules/stitching/include;../modules/dynamicuda/include;../modules/calib3d/include;../3rdparty/libjpeg;../modules/gpu/include;../modules/objdetect/include;../modules/video/include;../modules/gpu/src/cuda;../modules/gpu/src/nvidia;../modules/gpu/src/nvidia/NPP_Staging;../modules/gpu/src/nvidia/core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
@@ -66,7 +66,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>cudart.lib;nppi.lib;nppc.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <CudaCompile>
@@ -85,7 +85,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions);_SCL_SECURE_NO_WARNINGS;CV_AVX2</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../include;../modules/core/include;../modules/flann/include;../modules/features2d/include;../modules/imgproc/include;../modules/highgui/include;../modules/stitching/include;../modules/dynamicuda/include;../modules/calib3d/include;../3rdparty/libjpeg</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;../modules/core/include;../modules/flann/include;../modules/features2d/include;../modules/imgproc/include;../modules/highgui/include;../modules/stitching/include;../modules/dynamicuda/include;../modules/calib3d/include;../3rdparty/libjpeg;../modules/gpu/include;../modules/objdetect/include;../modules/video/include;../modules/gpu/src/cuda;../modules/gpu/src/nvidia;../modules/gpu/src/nvidia/NPP_Staging;../modules/gpu/src/nvidia/core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
     </ClCompile>
@@ -94,7 +94,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>cudart.lib;nppi.lib;nppc.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <CudaCompile>
@@ -192,13 +192,33 @@
     <ClCompile Include="..\modules\features2d\src\freak.cpp" />
     <ClCompile Include="..\modules\features2d\src\keypoint.cpp" />
     <ClCompile Include="..\modules\features2d\src\matchers.cpp">
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)\matchers1.cpp</ObjectFileName>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)\matchers1.cpp</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)\matchers1.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)\matchers1.obj</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\modules\features2d\src\mser.cpp" />
     <ClCompile Include="..\modules\features2d\src\orb.cpp" />
     <ClCompile Include="..\modules\features2d\src\stardetector.cpp" />
     <ClCompile Include="..\modules\flann\src\miniflann.cpp" />
+    <ClCompile Include="..\modules\gpu\src\arithm.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)\arithm1.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)\arithm1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\modules\gpu\src\brute_force_matcher.cpp" />
+    <ClCompile Include="..\modules\gpu\src\cascadeclassifier2.cpp" />
+    <ClCompile Include="..\modules\gpu\src\cudastream.cpp" />
+    <ClCompile Include="..\modules\gpu\src\cu_safe_call.cpp" />
+    <ClCompile Include="..\modules\gpu\src\element_operations.cpp" />
+    <ClCompile Include="..\modules\gpu\src\error.cpp" />
+    <ClCompile Include="..\modules\gpu\src\graphcuts.cpp" />
+    <ClCompile Include="..\modules\gpu\src\imgproc2.cpp" />
+    <ClCompile Include="..\modules\gpu\src\matrix_operations.cpp" />
+    <ClCompile Include="..\modules\gpu\src\matrix_reductions.cpp" />
+    <ClCompile Include="..\modules\gpu\src\precomp.cpp" />
+    <ClCompile Include="..\modules\gpu\src\pyramids.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)\pyramids1.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)\pyramids1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\modules\gpu\src\remap.cpp" />
     <ClCompile Include="..\modules\highgui\src\bitstrm.cpp" />
     <ClCompile Include="..\modules\highgui\src\grfmt_base.cpp" />
     <ClCompile Include="..\modules\highgui\src\grfmt_bmp.cpp" />
@@ -253,9 +273,11 @@
     <ClCompile Include="..\modules\imgproc\src\thresh.cpp" />
     <ClCompile Include="..\modules\imgproc\src\undistort.cpp" />
     <ClCompile Include="..\modules\imgproc\src\utils.cpp">
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)\utils1.cpp</ObjectFileName>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)\utils1.cpp</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='release|x64'">$(IntDir)\utils1.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='debug|x64'">$(IntDir)\utils1.obj</ObjectFileName>
     </ClCompile>
+    <ClCompile Include="..\modules\objdetect\src\cascadedetect.cpp" />
+    <ClCompile Include="..\modules\objdetect\src\haar.cpp" />
     <ClCompile Include="..\modules\stitching\src\autocalib.cpp" />
     <ClCompile Include="..\modules\stitching\src\blenders.cpp" />
     <ClCompile Include="..\modules\stitching\src\camera.cpp" />
@@ -286,6 +308,24 @@
     <ClInclude Include="..\modules\core\src\precomp.hpp" />
     <ClInclude Include="..\modules\flann\src\precomp.hpp" />
     <ClInclude Include="..\modules\stitching\src\precomp.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\modules\dynamicuda\src\cuda\matrix_operations.cu" />
+    <CudaCompile Include="..\modules\gpu\src\cuda\bf_knnmatch.cu" />
+    <CudaCompile Include="..\modules\gpu\src\cuda\bf_match.cu" />
+    <CudaCompile Include="..\modules\gpu\src\cuda\bf_radius_match.cu" />
+    <CudaCompile Include="..\modules\gpu\src\cuda\ccomponetns.cu" />
+    <CudaCompile Include="..\modules\gpu\src\cuda\element_operations.cu" />
+    <CudaCompile Include="..\modules\gpu\src\cuda\imgproc.cu" />
+    <CudaCompile Include="..\modules\gpu\src\cuda\lut.cu" />
+    <CudaCompile Include="..\modules\gpu\src\cuda\mathfunc.cu" />
+    <CudaCompile Include="..\modules\gpu\src\cuda\matrix_reductions.cu" />
+    <CudaCompile Include="..\modules\gpu\src\cuda\pyr_down.cu" />
+    <CudaCompile Include="..\modules\gpu\src\cuda\pyr_up.cu" />
+    <CudaCompile Include="..\modules\gpu\src\cuda\remap.cu" />
+    <CudaCompile Include="..\modules\gpu\src\nvidia\core\NCV.cu" />
+    <CudaCompile Include="..\modules\gpu\src\nvidia\core\NCVPyramid.cu" />
+    <CudaCompile Include="..\modules\gpu\src\nvidia\NPP_staging\NPP_staging.cu" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
