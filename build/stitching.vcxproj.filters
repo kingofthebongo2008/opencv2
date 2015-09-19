@@ -177,9 +177,6 @@
     <ClCompile Include="..\modules\stitching\src\warpers.cpp">
       <Filter>modules\stitching</Filter>
     </ClCompile>
-    <ClCompile Include="..\modules\flann\src\flann.cpp">
-      <Filter>modules\flann</Filter>
-    </ClCompile>
     <ClCompile Include="..\modules\flann\src\miniflann.cpp">
       <Filter>modules\flann</Filter>
     </ClCompile>
@@ -306,22 +303,7 @@
     <ClCompile Include="..\modules\core\src\dxt.cpp">
       <Filter>modules\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\modules\calib3d\src\calibinit.cpp">
-      <Filter>modules\calib3d</Filter>
-    </ClCompile>
     <ClCompile Include="..\modules\calib3d\src\calibration.cpp">
-      <Filter>modules\calib3d</Filter>
-    </ClCompile>
-    <ClCompile Include="..\modules\calib3d\src\checkchessboard.cpp">
-      <Filter>modules\calib3d</Filter>
-    </ClCompile>
-    <ClCompile Include="..\modules\calib3d\src\circlesgrid.cpp">
-      <Filter>modules\calib3d</Filter>
-    </ClCompile>
-    <ClCompile Include="..\modules\calib3d\src\epnp.cpp">
-      <Filter>modules\calib3d</Filter>
-    </ClCompile>
-    <ClCompile Include="..\modules\calib3d\src\fisheye.cpp">
       <Filter>modules\calib3d</Filter>
     </ClCompile>
     <ClCompile Include="..\modules\calib3d\src\fundam.cpp">
@@ -329,33 +311,6 @@
     </ClCompile>
     <ClCompile Include="..\modules\calib3d\src\modelest.cpp">
       <Filter>modules\calib3d</Filter>
-    </ClCompile>
-    <ClCompile Include="..\modules\calib3d\src\p3p.cpp">
-      <Filter>modules\calib3d</Filter>
-    </ClCompile>
-    <ClCompile Include="..\modules\calib3d\src\polynom_solver.cpp">
-      <Filter>modules\calib3d</Filter>
-    </ClCompile>
-    <ClCompile Include="..\modules\calib3d\src\posit.cpp">
-      <Filter>modules\calib3d</Filter>
-    </ClCompile>
-    <ClCompile Include="..\modules\calib3d\src\quadsubpix.cpp">
-      <Filter>modules\calib3d</Filter>
-    </ClCompile>
-    <ClCompile Include="..\modules\calib3d\src\solvepnp.cpp">
-      <Filter>modules\calib3d</Filter>
-    </ClCompile>
-    <ClCompile Include="..\modules\calib3d\src\stereobm.cpp">
-      <Filter>modules\calib3d</Filter>
-    </ClCompile>
-    <ClCompile Include="..\modules\calib3d\src\stereosgbm.cpp">
-      <Filter>modules\calib3d</Filter>
-    </ClCompile>
-    <ClCompile Include="..\modules\calib3d\src\triangulate.cpp">
-      <Filter>modules\calib3d</Filter>
-    </ClCompile>
-    <ClCompile Include="..\modules\features2d\src\bagofwords.cpp">
-      <Filter>modules\features2d</Filter>
     </ClCompile>
     <ClCompile Include="..\modules\features2d\src\blobdetector.cpp">
       <Filter>modules\features2d</Filter>
@@ -372,13 +327,7 @@
     <ClCompile Include="..\modules\features2d\src\detectors.cpp">
       <Filter>modules\features2d</Filter>
     </ClCompile>
-    <ClCompile Include="..\modules\features2d\src\draw.cpp">
-      <Filter>modules\features2d</Filter>
-    </ClCompile>
     <ClCompile Include="..\modules\features2d\src\dynamic.cpp">
-      <Filter>modules\features2d</Filter>
-    </ClCompile>
-    <ClCompile Include="..\modules\features2d\src\evaluation.cpp">
       <Filter>modules\features2d</Filter>
     </ClCompile>
     <ClCompile Include="..\modules\features2d\src\fast.cpp">

@@ -32,7 +32,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
-    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 7.5.props" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 6.5.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -80,7 +80,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions);_SCL_SECURE_NO_WARNINGS;CV_AVX2</PreprocessorDefinitions>
@@ -152,22 +152,9 @@
     <ClCompile Include="..\3rdparty\libjpeg\jquant2.c" />
     <ClCompile Include="..\3rdparty\libjpeg\jutils.c" />
     <ClCompile Include="..\3rdparty\libjpeg\transupp.c" />
-    <ClCompile Include="..\modules\calib3d\src\calibinit.cpp" />
     <ClCompile Include="..\modules\calib3d\src\calibration.cpp" />
-    <ClCompile Include="..\modules\calib3d\src\checkchessboard.cpp" />
-    <ClCompile Include="..\modules\calib3d\src\circlesgrid.cpp" />
-    <ClCompile Include="..\modules\calib3d\src\epnp.cpp" />
-    <ClCompile Include="..\modules\calib3d\src\fisheye.cpp" />
     <ClCompile Include="..\modules\calib3d\src\fundam.cpp" />
     <ClCompile Include="..\modules\calib3d\src\modelest.cpp" />
-    <ClCompile Include="..\modules\calib3d\src\p3p.cpp" />
-    <ClCompile Include="..\modules\calib3d\src\polynom_solver.cpp" />
-    <ClCompile Include="..\modules\calib3d\src\posit.cpp" />
-    <ClCompile Include="..\modules\calib3d\src\quadsubpix.cpp" />
-    <ClCompile Include="..\modules\calib3d\src\solvepnp.cpp" />
-    <ClCompile Include="..\modules\calib3d\src\stereobm.cpp" />
-    <ClCompile Include="..\modules\calib3d\src\stereosgbm.cpp" />
-    <ClCompile Include="..\modules\calib3d\src\triangulate.cpp" />
     <ClCompile Include="..\modules\core\src\algorithm.cpp" />
     <ClCompile Include="..\modules\core\src\alloc.cpp" />
     <ClCompile Include="..\modules\core\src\arithm.cpp" />
@@ -193,15 +180,12 @@
     <ClCompile Include="..\modules\core\src\stat.cpp" />
     <ClCompile Include="..\modules\core\src\system.cpp" />
     <ClCompile Include="..\modules\core\src\tables.cpp" />
-    <ClCompile Include="..\modules\features2d\src\bagofwords.cpp" />
     <ClCompile Include="..\modules\features2d\src\blobdetector.cpp" />
     <ClCompile Include="..\modules\features2d\src\brief.cpp" />
     <ClCompile Include="..\modules\features2d\src\brisk.cpp" />
     <ClCompile Include="..\modules\features2d\src\descriptors.cpp" />
     <ClCompile Include="..\modules\features2d\src\detectors.cpp" />
-    <ClCompile Include="..\modules\features2d\src\draw.cpp" />
     <ClCompile Include="..\modules\features2d\src\dynamic.cpp" />
-    <ClCompile Include="..\modules\features2d\src\evaluation.cpp" />
     <ClCompile Include="..\modules\features2d\src\fast.cpp" />
     <ClCompile Include="..\modules\features2d\src\fast_score.cpp" />
     <ClCompile Include="..\modules\features2d\src\features2d_init.cpp" />
@@ -214,7 +198,6 @@
     <ClCompile Include="..\modules\features2d\src\mser.cpp" />
     <ClCompile Include="..\modules\features2d\src\orb.cpp" />
     <ClCompile Include="..\modules\features2d\src\stardetector.cpp" />
-    <ClCompile Include="..\modules\flann\src\flann.cpp" />
     <ClCompile Include="..\modules\flann\src\miniflann.cpp" />
     <ClCompile Include="..\modules\highgui\src\bitstrm.cpp" />
     <ClCompile Include="..\modules\highgui\src\grfmt_base.cpp" />
@@ -306,6 +289,6 @@
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 7.5.targets" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 6.5.targets" />
   </ImportGroup>
 </Project>

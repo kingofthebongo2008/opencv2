@@ -2,3 +2,6 @@
 *.tlog
 *.idb
 *.opensdf
+*.deps
+
+tmp/*
