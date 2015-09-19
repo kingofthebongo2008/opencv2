@@ -43,6 +43,7 @@
 #include "precomp.hpp"
 
 #if defined WIN32 || defined _WIN32 || defined WINCE
+#include <sdkddkver.h>
 # include <windows.h>
 const char dir_separators[] = "/\\";
 const char native_separator = '\\';

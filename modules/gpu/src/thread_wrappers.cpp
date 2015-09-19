@@ -46,6 +46,7 @@
 
 #ifdef WIN32
     #define NOMINMAX
+    #include <sdkddkver.h>
     #include <windows.h>
 #else
     #include <pthread.h>

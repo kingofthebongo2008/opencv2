@@ -26,6 +26,7 @@
 #include <stdlib.h>
 
 #ifdef USE_WINDOWS_MESSAGEBOX
+#include <sdkddkver.h>
 #include <windows.h>
 #endif
 

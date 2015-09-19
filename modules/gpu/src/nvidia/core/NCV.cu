@@ -541,7 +541,7 @@ size_t NCVMemNativeAllocator::maxSize(void) const
 typedef struct _NcvTimeMoment NcvTimeMoment;
 
 #if defined(_WIN32) || defined(_WIN64)
-
+    #include <sdkddkver.h>
     #include <Windows.h>
 
     typedef struct _NcvTimeMoment
