@@ -1,0 +1,26 @@
+SOURCES	+=./modules/core/src/algorithm.cpp
+SOURCES	+=./modules/core/src/alloc.cpp
+SOURCES	+=./modules/core/src/arithm.cpp
+SOURCES	+=./modules/core/src/array.cpp
+SOURCES	+=./modules/core/src/cmdparser.cpp
+SOURCES	+=./modules/core/src/convert.cpp
+SOURCES	+=./modules/core/src/copy.cpp
+SOURCES	+=./modules/core/src/datastructs.cpp
+SOURCES	+=./modules/core/src/drawing.cpp
+SOURCES	+=./modules/core/src/dxt.cpp
+SOURCES	+=./modules/core/src/gl_core_3_1.cpp
+SOURCES	+=./modules/core/src/gpumat.cpp
+SOURCES	+=./modules/core/src/lapack.cpp
+SOURCES	+=./modules/core/src/mathfuncs.cpp
+SOURCES	+=./modules/core/src/matmul.cpp
+SOURCES	+=./modules/core/src/matop.cpp
+SOURCES	+=./modules/core/src/matrix.cpp
+SOURCES	+=./modules/core/src/opengl_interop.cpp
+SOURCES	+=./modules/core/src/opengl_interop_deprecated.cpp
+SOURCES	+=./modules/core/src/parallel.cpp
+SOURCES	+=./modules/core/src/persistence.cpp
+SOURCES	+=./modules/core/src/rand.cpp
+SOURCES	+=./modules/core/src/stat.cpp
+SOURCES	+=./modules/core/src/system.cpp
+SOURCES	+=./modules/core/src/tables.cpp
+
