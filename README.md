@@ -1,22 +1,20 @@
-### OpenCV: Open Source Computer Vision Library
+Finished work:
 
-[![Gittip](http://img.shields.io/gittip/OpenCV.png)](https://www.gittip.com/OpenCV/)
+1. Fixed several bugs in opencv that were crashing avx2 path. Now cpu works much faster if you have it.
+2. Renamed files so the whole project can be compiled with qmake without problematic errors
+3. Did a visual studio solution in the build directory for easier debugging, because qmake is not convenient.
 
-#### Resources
+Usage:
 
-* Homepage: <http://opencv.org>
-* Docs: <http://docs.opencv.org>
-* Q&A forum: <http://answers.opencv.org>
-* Issue tracking: <http://code.opencv.org>
+Install qt 5.5 and Visual Studio 2013
 
-#### Contributing
+add qmake to your path:
 
-Please read before starting work on a pull request: <http://code.opencv.org/projects/opencv/wiki/How_to_contribute>
+Start visual studio command line environment for x64 version:
 
-Summary of guidelines:
+execute
 
-* One pull request per issue;
-* Choose the right base branch;
-* Include tests and documentation;
-* Clean up "oops" commits before submitting;
-* Follow the coding style guide.
+qmake stitching.pro
+nmake
+
+the build is in stitching_qmake.exe.

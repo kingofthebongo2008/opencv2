@@ -3,6 +3,7 @@ DEFINES                 +=  WIN32 _CRT_SECURE_NO_WARNINGS _CONSOLE _LIB _SCL_SEC
 CONFIG                  =   console
 TARGET                  =   stitching_qmake
 
+#use CUDA_PATH or CUDA_PATH_V6_5 for specific version
 CUDA_INC_PATH           = $$(CUDA_PATH)\\include
 CUDA_LIB_PATH           = $$(CUDA_PATH)\\lib\\x64
 
