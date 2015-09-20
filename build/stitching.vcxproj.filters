@@ -309,7 +309,7 @@
     <ClCompile Include="..\modules\imgproc\src\sumpixels.cpp">
       <Filter>modules\imgproc</Filter>
     </ClCompile>
-    <ClCompile Include="..\modules\imgproc\src\tables.cpp">
+    <ClCompile Include="..\modules\imgproc\src\tables1.cpp">
       <Filter>modules\imgproc</Filter>
     </ClCompile>
     <ClCompile Include="..\modules\imgproc\src\templmatch.cpp">
@@ -321,7 +321,7 @@
     <ClCompile Include="..\modules\imgproc\src\undistort.cpp">
       <Filter>modules\imgproc</Filter>
     </ClCompile>
-    <ClCompile Include="..\modules\imgproc\src\utils.cpp">
+    <ClCompile Include="..\modules\imgproc\src\utils1.cpp">
       <Filter>modules\imgproc</Filter>
     </ClCompile>
     <ClCompile Include="..\modules\core\src\dxt.cpp">
@@ -369,7 +369,7 @@
     <ClCompile Include="..\modules\features2d\src\keypoint.cpp">
       <Filter>modules\features2d</Filter>
     </ClCompile>
-    <ClCompile Include="..\modules\features2d\src\matchers.cpp">
+    <ClCompile Include="..\modules\features2d\src\matchers1.cpp">
       <Filter>modules\features2d</Filter>
     </ClCompile>
     <ClCompile Include="..\modules\features2d\src\mser.cpp">
@@ -549,13 +549,13 @@
     <ClCompile Include="..\modules\gpu\src\matrix_operations.cpp">
       <Filter>modules\gpu</Filter>
     </ClCompile>
-    <ClCompile Include="..\modules\gpu\src\pyramids.cpp">
+    <ClCompile Include="..\modules\gpu\src\pyramids1.cpp">
       <Filter>modules\gpu</Filter>
     </ClCompile>
     <ClCompile Include="..\modules\gpu\src\element_operations.cpp">
       <Filter>modules\gpu</Filter>
     </ClCompile>
-    <ClCompile Include="..\modules\gpu\src\arithm.cpp">
+    <ClCompile Include="..\modules\gpu\src\arithm1.cpp">
       <Filter>modules\gpu</Filter>
     </ClCompile>
     <ClCompile Include="..\modules\gpu\src\error.cpp">
