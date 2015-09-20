@@ -1,9 +1,3 @@
-#	\file cuda.pri
-#	\brief CUDA compiler configuration.
-#	\author Andriy Golovnya <andriy.golovnya@gmail.com> http://redscorp.net/
-#	\url http://cuda-z.sf.net/ http://sf.net/projects/cuda-z/
-#	\license GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
-#
 # Cuda extra-compiler for handling files specified in the CUSOURCES variable
 {
 	cu.name = Cuda ${QMAKE_FILE_IN}
@@ -36,8 +30,8 @@
 #	QMAKE_CUEXTRAFLAGS += -clean
 	QMAKE_EXTRA_VARIABLES += QMAKE_CUEXTRAFLAGS
 
-	cu.commands = $$QMAKE_CUC $(EXPORT_QMAKE_CUEXTRAFLAGS) -o $$OBJECTS_DIR/$${QMAKE_CPP_MOD_CU}${QMAKE_FILE_BASE}$${QMAKE_EXT_OBJ} ${QMAKE_FILE_NAME}$$escape_expand(\\n\\t)
-	cu.output = $$OBJECTS_DIR/$${QMAKE_CPP_MOD_CU}${QMAKE_FILE_BASE}$${QMAKE_EXT_OBJ}
+	cu.commands = $$QMAKE_CUC $(EXPORT_QMAKE_CUEXTRAFLAGS) -o $$OBJECTS_DIR/cuda/$${QMAKE_CPP_MOD_CU}${QMAKE_FILE_BASE}$${QMAKE_EXT_OBJ} ${QMAKE_FILE_NAME}$$escape_expand(\\n\\t)
+	cu.output = $$OBJECTS_DIR/cuda/$${QMAKE_CPP_MOD_CU}${QMAKE_FILE_BASE}$${QMAKE_EXT_OBJ}
 	silent:cu.commands = @echo nvcc ${QMAKE_FILE_IN} && $$cu.commands
 	QMAKE_EXTRA_COMPILERS += cu
 

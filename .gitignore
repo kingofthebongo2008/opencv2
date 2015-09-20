@@ -5,3 +5,6 @@
 *.deps
 
 tmp/*
+stitching_qmake.exe.manifest
+Makefile
+bin/windows/release/result.jpg
