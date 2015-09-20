@@ -127,7 +127,7 @@ std::wstring GetTempFileNameWinRT(std::wstring prefix)
     wchar_t guidStr[40];
     GUID g;
     CoCreateGuid(&g);
-    wchar_t* mask = L"%08x_%04x_%04x_%02x%02x_%02x%02x%02x%02x%02x%02x";
+    auto mask = L"%08x_%04x_%04x_%02x%02x_%02x%02x%02x%02x%02x%02x";
     swprintf(&guidStr[0], sizeof(guidStr)/sizeof(wchar_t), mask,
              g.Data1, g.Data2, g.Data3, UINT(g.Data4[0]), UINT(g.Data4[1]),
              UINT(g.Data4[2]), UINT(g.Data4[3]), UINT(g.Data4[4]),
