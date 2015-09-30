@@ -14,7 +14,9 @@ Start visual studio command line environment for x64 version:
 
 execute
 
-qmake stitching.pro
-nmake
+qmake stitching.pro -o Makefile.stiching
+nmake -f Makefile.stiching
 
-the build is in stitching_qmake.exe.
+qmake stitching_detailed.pro -o Makefile.stiching_detailed
+nmake -f Makefile.stiching_detailed
+

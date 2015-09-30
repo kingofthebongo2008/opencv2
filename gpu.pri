@@ -26,7 +26,9 @@ CUSOURCES +=./modules/gpu/src/cuda/matrix_reductions.cu
 CUSOURCES +=./modules/gpu/src/cuda/pyr_down.cu
 CUSOURCES +=./modules/gpu/src/cuda/pyr_up.cu
 CUSOURCES +=./modules/gpu/src/cuda/remap.cu
+CUSOURCES +=./modules/gpu/src/cuda/integral_image.cu
 CUSOURCES +=./modules/gpu/src/nvidia/core/NCV.cu
 CUSOURCES +=./modules/gpu/src/nvidia/core/NCVPyramid.cu
 CUSOURCES +=./modules/gpu/src/nvidia/NPP_staging/NPP_staging.cu
+
 

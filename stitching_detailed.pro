@@ -1,7 +1,7 @@
-DEFINES                 +=  WIN32 _CRT_SECURE_NO_WARNINGS _CONSOLE _LIB _SCL_SECURE_NO_WARNINGS CV_AVX2 NDEBUG UNICODE _UNICODE
+DEFINES                 +=  WIN32 _CRT_SECURE_NO_WARNINGS _CONSOLE _LIB _SCL_SECURE_NO_WARNINGS CV_AVX2 NDEBUG UNICODE _UNICODE HAVE_OPENCV_NONFREE
 
 CONFIG                  =   console
-TARGET                  =   stitching
+TARGET                  =   stitching_detailed
 
 #use CUDA_PATH or CUDA_PATH_V6_5 for specific version
 CUDA_INC_PATH           = $$(CUDA_PATH)\\include
@@ -33,17 +33,23 @@ INCLUDEPATH             +=  ./modules/gpu/src/cuda
 INCLUDEPATH             +=  ./modules/gpu/src/nvidia
 INCLUDEPATH             +=  ./modules/gpu/src/nvidia/NPP_Staging
 INCLUDEPATH             +=  ./modules/gpu/src/nvidia/core
+INCLUDEPATH             +=  ./modules/nonfree/include
+INCLUDEPATH             +=  ./modules/gpu/src
 
 QMAKE_LFLAGS_CONSOLE    +=  /OPT:ICF /OPT:REF /LIBPATH:\"$$CUDA_LIBPATH\" /LTCG /NXCOMPAT /MANIFEST /DYNAMICBASE /MACHINE:X64
 QMAKE_LFLAGS            +=
 QMAKE_LIBS              +=  kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib cudart.lib nppc.lib nppi.lib
 
 
-OBJECTS_DIR             =   ./tmp/stiching/x64
+OBJECTS_DIR             =  ./tmp/stiching_detailed/x64
 
 
-SOURCES                 = ./samples/cpp/stitching.cpp
+SOURCES                 = ./samples/cpp/stitching_detailed.cpp
 CUSOURCES               = 
+
+SOURCES         +=./modules/gpu/src/color2.cpp
+CUSOURCES               +=./modules/gpu/src/cuda/color.cu
+CUSOURCES               +=./modules/gpu/src/cuda/debayer.cu
 
 include(jpeg.pri)
 include(calib3d.pri)
@@ -56,5 +62,6 @@ include(highgui.pri)
 include(imgproc.pri)
 include(objdetect.pri)
 include(stitching.pri)
+include(nonfree.pri)
 include(cuda.pri)
 

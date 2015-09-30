@@ -160,4 +160,71 @@ void cv::gpu::buildWarpSphericalMaps(Size src_size, Rect dst_roi, const Mat &K, 
     device::imgproc::buildWarpSphericalMaps(dst_roi.tl().x, dst_roi.tl().y, map_x, map_y, K_Rinv.ptr<float>(), R_Kinv.ptr<float>(), scale, StreamAccessor::getStream(stream));
 }
 
+namespace cv { namespace gpu { namespace device
+{
+    namespace imgproc
+    {
+        void shfl_integral_gpu(const PtrStepSzb& img, PtrStepSz<unsigned int> integral, cudaStream_t stream);
+    }
+}}}
+
+
+void cv::gpu::integralBuffered(const GpuMat& src, GpuMat& sum, GpuMat& buffer, Stream& s)
+{
+    CV_Assert(src.type() == CV_8UC1);
+
+    cudaStream_t stream = StreamAccessor::getStream(s);
+
+    cv::Size whole;
+    cv::Point offset;
+
+    src.locateROI(whole, offset);
+
+    if (deviceSupports(WARP_SHUFFLE_FUNCTIONS) && src.cols <= 2048
+        && offset.x % 16 == 0 && ((src.cols + 63) / 64) * 64 <= (static_cast<int>(src.step) - offset.x))
+    {
+        ensureSizeIsEnough(((src.rows + 7) / 8) * 8, ((src.cols + 63) / 64) * 64, CV_32SC1, buffer);
+
+        cv::gpu::device::imgproc::shfl_integral_gpu(src, buffer, stream);
+
+        sum.create(src.rows + 1, src.cols + 1, CV_32SC1);
+        if (s)
+            s.enqueueMemSet(sum, Scalar::all(0));
+        else
+            sum.setTo(Scalar::all(0));
+
+        GpuMat inner = sum(Rect(1, 1, src.cols, src.rows));
+        GpuMat res = buffer(Rect(0, 0, src.cols, src.rows));
+
+        if (s)
+            s.enqueueCopy(res, inner);
+        else
+            res.copyTo(inner);
+    }
+    else
+    {
+        sum.create(src.rows + 1, src.cols + 1, CV_32SC1);
+
+        NcvSize32u roiSize;
+        roiSize.width = src.cols;
+        roiSize.height = src.rows;
+
+        cudaDeviceProp prop;
+        cudaSafeCall( cudaGetDeviceProperties(&prop, cv::gpu::getDevice()) );
+
+        Ncv32u bufSize;
+        ncvSafeCall( nppiStIntegralGetSize_8u32u(roiSize, &bufSize, prop) );
+        ensureSizeIsEnough(1, bufSize, CV_8UC1, buffer);
+
+
+        NppStStreamHandler h(stream);
+
+        ncvSafeCall( nppiStIntegral_8u32u_C1R(const_cast<Ncv8u*>(src.ptr<Ncv8u>()), static_cast<int>(src.step),
+            sum.ptr<Ncv32u>(), static_cast<int>(sum.step), roiSize, buffer.ptr<Ncv8u>(), bufSize, prop) );
+
+        if (stream == 0)
+            cudaSafeCall( cudaDeviceSynchronize() );
+    }
+}
+
 #endif
