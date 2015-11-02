@@ -3,6 +3,8 @@ DEFINES                 +=  WIN32 _CRT_SECURE_NO_WARNINGS _CONSOLE _LIB _SCL_SEC
 CONFIG                  =   console
 TARGET                  =   stitching
 
+QT += widget
+
 #use CUDA_PATH or CUDA_PATH_V6_5 for specific version
 CUDA_INC_PATH           = $$(CUDA_PATH)\\include
 CUDA_LIB_PATH           = $$(CUDA_PATH)\\lib\\x64
@@ -15,6 +17,14 @@ CUDA_INCLUDEPATH        =  $$CUDA_INC_PATH
 CUDA_LIBPATH            =  $$CUDA_LIB_PATH
 
 INCLUDEPATH             +=  $$CUDA_INCLUDEPATH
+
+INCLUDEPATH             +=  C:\Qt\5.5\msvc2013_64\include\
+INCLUDEPATH             +=  C:\Qt\5.5\msvc2013_64\include\QtCore
+INCLUDEPATH             +=  C:\Qt\5.5\msvc2013_64\include\QtGui
+INCLUDEPATH             +=  C:\Qt\5.5\msvc2013_64\include\QtMultimedia
+INCLUDEPATH             +=  C:\Qt\5.5\msvc2013_64\include\QtMultimediaWidgets
+INCLUDEPATH             +=  C:\Qt\5.5\msvc2013_64\include\QtWidgets
+
 
 INCLUDEPATH             +=  ./include
 INCLUDEPATH             +=  ./modules/core/include
@@ -37,6 +47,11 @@ INCLUDEPATH             +=  ./modules/gpu/src/nvidia/core
 QMAKE_LFLAGS_CONSOLE    +=  /OPT:ICF /OPT:REF /LIBPATH:\"$$CUDA_LIBPATH\" /LTCG /NXCOMPAT /MANIFEST /DYNAMICBASE /MACHINE:X64
 QMAKE_LFLAGS            +=
 QMAKE_LIBS              +=  kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib cudart.lib nppc.lib nppi.lib
+QMAKE_LIBS              +=  c:\Qt\5.5\msvc2013_64\lib\Qt5Core.lib
+QMAKE_LIBS              +=  c:\Qt\5.5\msvc2013_64\lib\Qt5Widgets.lib
+
+QT += core
+QT += widgets
 
 
 OBJECTS_DIR             =   ./tmp/stiching/x64
