@@ -46,34 +46,7 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/stitching/stitcher.hpp"
 
-
-#include <QWidget>
-#include <QDropEvent>
-#include <QDebug>
-#include <QMimeData>
-#include <QDialog>
-#include <QLabel>
-#include <QMainWindow>
-#include <QUrl>
-#include <QStandardItem>
-#include <QItemSelection>
-#include <QGraphicsView>
-#include <QMouseEvent>
-#include <QAbstractButton>
-#include <QGraphicsVideoItem>
-#include <QMediaPlayer>
-#include <QDesktopWidget>
-#include <QApplication>
-#include <QTime>
-#include <QFileDialog>
-#include <QMessageBox>
-#include <QFileDialog>
-#include <QStandardItem>
-#include <QGraphicsVideoItem>
-#include <QMediaPlayer>
-#include <QDoubleSpinBox>
-#include <QDesktopServices>
-#include <QStringBuilder>
+#include "window.h"
 
 using namespace std;
 using namespace cv;
@@ -84,20 +57,6 @@ string result_name = "result.jpg";
 
 void printUsage();
 int parseCmdArgs(int argc, char** argv);
-
-namespace qtExample
-{
-    class MainWindow : public QMainWindow
-    {
-        //Q_OBJECT
-
-    public:
-        MainWindow(QWidget *parent = 0)
-        {
-
-        }
-    };
-}
 
 
 int main(int argc, char* argv[])

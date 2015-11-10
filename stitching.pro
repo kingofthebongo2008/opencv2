@@ -1,6 +1,7 @@
+TEMPLATE		= app
 DEFINES                 +=  WIN32 _CRT_SECURE_NO_WARNINGS _CONSOLE _LIB _SCL_SECURE_NO_WARNINGS CV_AVX2 NDEBUG UNICODE _UNICODE
 
-CONFIG                  =   console
+CONFIG                  =   console moc resources
 TARGET                  =   stitching
 
 QT += widget
@@ -52,10 +53,12 @@ QMAKE_LIBS              +=  c:\Qt\5.5\msvc2013_64\lib\Qt5Widgets.lib
 
 QT += core
 QT += widgets
+QT += moc
 
 
 OBJECTS_DIR             =   ./tmp/stiching/x64
 
+HEADERS			+= ./samples/cpp/window.h
 
 SOURCES                 = ./samples/cpp/stitching.cpp
 CUSOURCES               = 
